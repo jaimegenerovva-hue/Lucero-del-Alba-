@@ -234,41 +234,38 @@ export default function Home() {
           `}</style>
         </section>
 
-        {/* VR Section */}
+        {/* VR / Video Section */}
         <section 
           id="realidad-virtual" 
-          className="w-full h-[700px] relative z-10 flex items-center justify-center overflow-hidden"
+          className="w-full h-[440px] md:h-[500px] relative z-10 flex items-center justify-center overflow-hidden"
         >
-          <div 
-            className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
-            style={{
-              backgroundImage: "url('https://fotos15.apinmo.com/3503/28793640/53-2.jpg')",
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          >
-            <div className="absolute inset-0 bg-black/35" />
-            
-            <div className="relative z-10">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="flex flex-col items-center"
+          <img 
+            src="https://res.cloudinary.com/dwrgm5yl/image/upload/v1789119343/portada.png" 
+            alt="Video-tour de la casa" 
+            loading="lazy" 
+            className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none" 
+          />
+          <div className="absolute inset-0 bg-black/50" />
+          
+          <div className="relative z-10 flex flex-col items-center justify-center text-center px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="flex flex-col items-center"
+            >
+              <h3 className="text-4xl sm:text-5xl md:text-6xl font-cursive italic text-white mb-8 tracking-tight leading-tight drop-shadow-md">
+                Video-tour de la casa
+              </h3>
+              <button 
+                onClick={() => window.open('https://my.matterport.com/show/?m=28793640', '_blank')}
+                className="flex items-center gap-4 px-10 py-4 md:py-5 bg-white/15 backdrop-blur-md border border-white rounded-full text-white text-xs tracking-[0.3em] font-bold hover:bg-white/25 hover:scale-105 transition-all duration-500 group uppercase shadow-lg"
               >
-                <h3 className="text-5xl md:text-6xl lg:text-7xl font-cursive italic text-white mb-10 tracking-tight leading-tight">
-                  Video-tour de la casa
-                </h3>
-                <button 
-                  onClick={() => window.open('https://my.matterport.com/show/?m=28793640', '_blank')}
-                  className="flex items-center gap-4 px-10 py-5 bg-white/10 backdrop-blur-md border border-white rounded-full text-white text-xs tracking-[0.3em] font-bold hover:bg-white/20 hover:scale-105 transition-all duration-500 group uppercase"
-                >
-                  <Play size={20} className="fill-white group-hover:scale-110 transition-transform" />
-                  REPRODUCIR VÍDEO
-                </button>
-              </motion.div>
-            </div>
+                <Play size={20} className="fill-white group-hover:scale-110 transition-transform" />
+                REPRODUCIR VÍDEO
+              </button>
+            </motion.div>
           </div>
         </section>
 
