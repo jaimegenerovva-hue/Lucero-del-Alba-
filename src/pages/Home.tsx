@@ -1,10 +1,13 @@
 import React, { useState, useEffect, Suspense } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Smartphone, Bed, Bath, Hash, Play } from 'lucide-react';
+import { trackMetaLead } from '../utils/analytics';
 
 const InmoZoneMap = React.lazy(() => import('../components/InmoZoneMap'));
 
 export default function Home() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const videoRef = React.useRef<HTMLVideoElement>(null);
@@ -36,15 +39,24 @@ export default function Home() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: Record<string, string> = {};
-    if (!formData.name) newErrors.name = "El nombre es obligatorio";
-    if (!formData.phone) newErrors.phone = "El teléfono es obligatorio";
+    if (!formData.name.trim()) newErrors.name = "El nombre es obligatorio";
+    if (!formData.phone.trim()) newErrors.phone = "El teléfono es obligatorio";
     
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      alert("Mensaje enviado con éxito. Nos pondremos en contacto pronto.");
+      // Disparar evento de conversión de Meta
+      trackMetaLead({
+        name: formData.name,
+        phone: formData.phone,
+      });
+
+      const submittedName = formData.name;
       setFormData({ name: '', phone: '', message: '' });
       setErrors({});
+
+      // Redirigir a la página de agradecimiento
+      navigate('/gracias', { state: { name: submittedName } });
     }
   };
 
