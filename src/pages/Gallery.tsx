@@ -4,106 +4,93 @@ import { X, ChevronLeft, ChevronRight, ArrowLeft } from 'lucide-react';
 
 const categoriesData = [
   {
-    name: "EXTERIOR",
-    cover: "https://fotos15.apinmo.com/3503/28793640/53-1.jpg",
-    images: [
-      "https://fotos15.apinmo.com/3503/28793640/53-1.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-2s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-3s.jpg",
-    ]
-  },
-  {
     name: "PATIO",
-    cover: "https://fotos15.apinmo.com/3503/28793640/53-4s.jpg",
+    cover: "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118126/79-17.jpg",
     images: [
-      "https://fotos15.apinmo.com/3503/28793640/53-4s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-5s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-6s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-7s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-8s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-9s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-10s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-11s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-12s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-13s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-14s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-15s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-16s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-29s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-30s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-31s.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118126/79-17.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118126/79-16.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118126/79-15.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118126/79-14.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118125/79-9.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118126/79-13.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118126/79-11.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118125/79-1.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118125/79-10.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118125/79-8.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118125/79-4.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118125/79-5.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118125/79-7.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118124/79-3.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118124/79-2.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118124/79-6.jpg",
     ]
   },
   {
     name: "RECIBIDOR",
-    cover: "https://fotos15.apinmo.com/3503/28793640/53-17s.jpg",
+    cover: "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118126/79-18.jpg",
     images: [
-      "https://fotos15.apinmo.com/3503/28793640/53-17s.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118126/79-18.jpg",
     ]
   },
   {
     name: "SALÓN",
-    cover: "https://fotos15.apinmo.com/3503/28793640/53-18s.jpg",
+    cover: "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118128/79-28.jpg",
     images: [
-      "https://fotos15.apinmo.com/3503/28793640/53-18s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-19s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-20s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-21s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-22s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-23s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-33s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-34s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-35s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-36s.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118128/79-28.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118129/79-31.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118128/79-29.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118128/79-30.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118127/79-22.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118127/79-21.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118127/79-20.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118126/79-19.jpg",
     ]
   },
   {
     name: "COCINA",
-    cover: "https://fotos15.apinmo.com/3503/28793640/53-24s.jpg",
+    cover: "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118128/79-25.jpg",
     images: [
-      "https://fotos15.apinmo.com/3503/28793640/53-24s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-25s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-26s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-27s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-28s.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118128/79-25.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118128/79-24.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118127/79-23.jpg",
     ]
   },
   {
     name: "HABITACIONES",
-    cover: "https://fotos15.apinmo.com/3503/28793640/53-37s.jpg",
+    cover: "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118132/79-49.jpg",
     images: [
-      "https://fotos15.apinmo.com/3503/28793640/53-37s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-38s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-44s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-45s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-46s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-47s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-48s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-49s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-52s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-53s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-54s.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118132/79-49.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118132/79-48.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118131/79-47.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118131/79-44.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118131/79-43.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118131/79-42.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118130/79-41.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118130/79-40.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118130/79-39.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118129/79-33.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118129/79-32.jpg",
     ]
   },
   {
     name: "BAÑOS",
-    cover: "https://fotos15.apinmo.com/3503/28793640/53-39s.jpg",
+    cover: "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118133/79-52.jpg",
     images: [
-      "https://fotos15.apinmo.com/3503/28793640/53-39s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-40s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-41s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-55s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-56s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-57s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-58s.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118133/79-52.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118133/79-53.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118132/79-50.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118132/79-51.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118130/79-36.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118130/79-35.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118129/79-34.jpg",
     ]
   },
   {
     name: "PLANOS",
-    cover: "https://fotos15.apinmo.com/3503/28793640/53-59s.jpg",
+    cover: "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118133/79-56.jpg",
     images: [
-      "https://fotos15.apinmo.com/3503/28793640/53-59s.jpg",
-      "https://fotos15.apinmo.com/3503/28793640/53-60s.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118133/79-56.jpg",
+      "https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118133/79-55.jpg",
     ]
   }
 ];
@@ -181,7 +168,7 @@ export default function Gallery() {
                       {cat.name}
                     </h3>
                     <p className="text-white/80 text-[10px] tracking-[0.3em] font-medium uppercase font-sans">
-                      {cat.images.length} fotos
+                      {cat.images.length} {cat.images.length === 1 ? 'foto' : 'fotos'}
                     </p>
                   </div>
                 </motion.div>

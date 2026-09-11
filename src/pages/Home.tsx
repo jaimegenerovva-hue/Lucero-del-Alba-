@@ -52,44 +52,63 @@ export default function Home() {
     <main className="w-full">
       {/* Hero Section */}
       <section 
-        className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden z-0"
+        className="sticky top-0 h-screen w-full flex items-center overflow-hidden z-0"
         style={{
-          backgroundImage: "url('https://i.ibb.co/gbfVp8ZM/97cda455-a851-4c42-b3f4-baa633d293c8.png')",
+          backgroundImage: "url('https://res.cloudinary.com/dwrgm5yl/image/upload/v1789119343/portada.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'scroll'
         }}
+        aria-label="Fachada con piscina de la vivienda"
       >
+        <img 
+          src="https://res.cloudinary.com/dwrgm5yl/image/upload/v1789119343/portada.png" 
+          alt="Fachada con piscina de la vivienda" 
+          loading="eager" 
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none" 
+        />
+        
+        {/* Horizontal dark gradient overlay: opaque on left, transparent at ~48-50% width */}
         <div 
-          className="absolute inset-0" 
+          className="absolute inset-0 pointer-events-none hero-horizontal-overlay" 
           style={{
-            background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.20) 22%, rgba(0, 0, 0, 0.00) 48%)'
+            background: 'linear-gradient(to right, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.80) 22%, rgba(0, 0, 0, 0.40) 38%, rgba(0, 0, 0, 0) 48%)'
           }} 
         />
         
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative z-10 text-center text-white px-6"
-        >
-          <p className="text-xs md:text-sm tracking-[0.4em] uppercase mb-4 opacity-90">
-            URBANIZACIÓN LA ESTRELLA · PALOMARES DEL RÍO
-          </p>
-          <h1 className="text-5xl md:text-8xl mb-6 font-serif tracking-tight leading-tight">
-            Calle Lucero del Alba
-          </h1>
-          <p className="text-sm md:text-lg tracking-widest uppercase mb-10 max-w-2xl mx-auto opacity-80 font-light">
-            Chalet independiente de lujo en una sola planta
-          </p>
-          <a 
-            href="#contacto"
-            className="inline-block px-[36px] py-[14px] bg-brand-navbar text-brand-cream border border-brand-accent text-xs tracking-[2px] font-medium hover:bg-brand-cream hover:text-brand-navbar transition-all duration-200 ease-out uppercase"
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex items-center pt-16 md:pt-0">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="w-full max-w-sm md:max-w-md text-left text-white flex flex-col items-start"
           >
-            CONSULTAR DISPONIBILIDAD
-          </a>
-        </motion.div>
+            <p className="text-[10px] sm:text-[11px] md:text-xs tracking-[0.25em] sm:tracking-[0.3em] uppercase mb-3 opacity-90 font-medium whitespace-nowrap">
+              URBANIZACIÓN LA ESTRELLA · PALOMARES DEL RÍO
+            </p>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] mb-3 md:mb-4 font-serif tracking-tight leading-[1.15]">
+              Calle Lucero del Alba
+            </h1>
+            <p className="text-[10px] sm:text-[11px] md:text-xs tracking-[0.16em] uppercase mb-6 md:mb-8 opacity-75 font-light leading-relaxed">
+              CHALET INDEPENDIENTE DE LUJO EN UNA SOLA PLANTA
+            </p>
+            <a 
+              href="#contacto"
+              className="inline-block px-[36px] py-[14px] bg-brand-navbar text-brand-cream border border-brand-accent text-xs tracking-[2px] font-medium hover:bg-brand-cream hover:text-brand-navbar transition-all duration-200 ease-out uppercase"
+            >
+              CONSULTAR DISPONIBILIDAD
+            </a>
+          </motion.div>
+        </div>
+
+        <style>{`
+          @media (max-width: 768px) {
+            .hero-horizontal-overlay {
+              background: linear-gradient(to right, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.80) 60%, rgba(0, 0, 0, 0.35) 90%, rgba(0, 0, 0, 0.1) 100%) !important;
+            }
+          }
+        `}</style>
       </section>
 
       {/* Content Wrapper for Scroll Over Effect */}
@@ -152,8 +171,9 @@ export default function Home() {
             <div className="order-1 md:order-2">
               <div className="relative group overflow-hidden flex-shrink-0" style={{ width: '100%', height: '580px' }}>
                 <img 
-                  src="https://fotos15.apinmo.com/3503/28793640/53-4.jpg" 
-                  alt="Interior Residencia Lucero del Alba" 
+                  src="https://res.cloudinary.com/dwrgm5yl/image/upload/v1789118124/79-2.jpg" 
+                  alt="Patio exterior de la vivienda" 
+                  loading="lazy"
                   className="w-full h-full object-cover rounded-[24px] shadow-2xl relative z-10"
                   style={{ imageRendering: 'high-quality', objectPosition: 'center' }}
                 />
