@@ -143,7 +143,7 @@ export default function Home() {
               </div>
               <div className="text-center">
                 <p className="text-[10px] tracking-[0.3em] uppercase opacity-60 mb-2">PRECIO</p>
-                <p className="text-lg md:text-2xl font-serif">375.000 €</p>
+                <p className="text-lg md:text-2xl font-serif">365.000 €</p>
               </div>
             </div>
           </div>
@@ -194,11 +194,11 @@ export default function Home() {
                   <p className="text-base font-semibold text-brand-navbar mb-0.5">Chalet independiente</p>
                   <p className="text-sm italic text-gray-500 mb-2">Urb. La Estrella · Palomares del Río</p>
                   <div className="space-y-1">
-                    <p className="text-[10px] text-gray-300 line-through">385.000 €</p>
+                    <p className="text-[10px] text-gray-300 line-through">375.000 €</p>
                     <div className="inline-flex items-center px-2 py-0.5 rounded-full bg-green-50 text-green-700 text-[9px] font-bold uppercase tracking-wider">
-                      ▼ 3% de bajada
+                      ▼ 10.000 € de bajada
                     </div>
-                    <p className="text-[15px] font-medium text-brand-navbar">375.000 €</p>
+                    <p className="text-[15px] font-medium text-brand-navbar">365.000 €</p>
                   </div>
                 </div>
                 <div className="absolute -inset-4 border border-brand-accent/20 rounded-[40px] -z-0 opacity-50" />

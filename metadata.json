@@ -2,5 +2,5 @@
   "name": "Propiedad Lucero del Alba",
   "description": "Exclusiva landing page inmobiliaria para un chalet independiente de lujo en Palomares del Río, Sevilla.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
