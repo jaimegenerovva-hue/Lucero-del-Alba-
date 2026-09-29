@@ -1,15 +1,18 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Smartphone, Bed, Bath, Hash, Play } from 'lucide-react';
+import { Smartphone, Bed, Bath, Hash, Play, Maximize2, X } from 'lucide-react';
 import { trackMetaLead } from '../utils/analytics';
 
 const InmoZoneMap = React.lazy(() => import('../components/InmoZoneMap'));
+
+const MATTERPORT_TOUR_URL = "https://my.matterport.com/show/?m=Fw2oi8qrc3D&ts=5&lang=es&lp=1&hl=0&tourcta=2&play=2&mls=1";
 
 export default function Home() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isPlayingTour, setIsPlayingTour] = useState(false);
   const videoRef = React.useRef<HTMLVideoElement>(null);
   const videoContainerRef = React.useRef<HTMLDivElement>(null);
   const [parallaxOffset, setParallaxOffset] = useState(0);
@@ -89,7 +92,7 @@ export default function Home() {
           }} 
         />
         
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex items-center pt-16 md:pt-0">
+        <div className="relative z-10 w-full px-6 sm:px-10 md:pl-12 lg:pl-16 xl:pl-20 flex items-center pt-16 md:pt-0">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -143,7 +146,7 @@ export default function Home() {
               </div>
               <div className="text-center">
                 <p className="text-[10px] tracking-[0.3em] uppercase opacity-60 mb-2">PRECIO</p>
-                <p className="text-lg md:text-2xl font-serif">365.000 €</p>
+                <p className="text-lg md:text-2xl font-serif">345.000 €</p>
               </div>
             </div>
           </div>
@@ -196,9 +199,9 @@ export default function Home() {
                   <div className="space-y-1">
                     <p className="text-[10px] text-gray-300 line-through">375.000 €</p>
                     <div className="inline-flex items-center px-2 py-0.5 rounded-full bg-green-50 text-green-700 text-[9px] font-bold uppercase tracking-wider">
-                      ▼ 10.000 € de bajada
+                      ▼ 8% de bajada
                     </div>
-                    <p className="text-[15px] font-medium text-brand-navbar">365.000 €</p>
+                    <p className="text-[15px] font-medium text-brand-navbar">345.000 €</p>
                   </div>
                 </div>
                 <div className="absolute -inset-4 border border-brand-accent/20 rounded-[40px] -z-0 opacity-50" />
@@ -249,36 +252,72 @@ export default function Home() {
         {/* VR / Video Section */}
         <section 
           id="realidad-virtual" 
-          className="w-full h-[440px] md:h-[500px] relative z-10 flex items-center justify-center overflow-hidden"
+          className="w-full relative z-10 flex items-center justify-center overflow-hidden bg-black transition-all duration-500 h-[85vh] min-h-[600px] md:min-h-[720px]"
         >
-          <img 
-            src="https://res.cloudinary.com/dwrgm5yl/image/upload/v1789119343/portada.png" 
-            alt="Video-tour de la casa" 
-            loading="lazy" 
-            className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none" 
+          <iframe 
+            src={MATTERPORT_TOUR_URL}
+            title="Tour Virtual 3D Matterport - Calle Lucero del Alba" 
+            className="w-full h-full border-0 absolute inset-0 z-0" 
+            allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen; vr"
+            allowFullScreen
+            sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-presentation"
           />
-          <div className="absolute inset-0 bg-black/50" />
-          
-          <div className="relative z-10 flex flex-col items-center justify-center text-center px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="flex flex-col items-center"
-            >
-              <h3 className="text-4xl sm:text-5xl md:text-6xl font-cursive italic text-white mb-8 tracking-tight leading-tight drop-shadow-md">
-                Video-tour de la casa
-              </h3>
-              <button 
-                onClick={() => window.open('https://my.matterport.com/show/?m=28793640', '_blank')}
-                className="flex items-center gap-4 px-10 py-4 md:py-5 bg-white/15 backdrop-blur-md border border-white rounded-full text-white text-xs tracking-[0.3em] font-bold hover:bg-white/25 hover:scale-105 transition-all duration-500 group uppercase shadow-lg"
+
+          {!isPlayingTour && (
+            <div className="absolute inset-0 z-10 flex items-center justify-center">
+              <img 
+                src="https://res.cloudinary.com/dwrgm5yl/image/upload/v1789119343/portada.png" 
+                alt="Video-tour de la casa" 
+                loading="lazy" 
+                className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none" 
+              />
+              <div className="absolute inset-0 bg-black/50" />
+              
+              <div className="relative z-10 flex flex-col items-center justify-center text-center px-6">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="flex flex-col items-center"
+                >
+                  <h3 className="text-4xl sm:text-5xl md:text-6xl font-cursive italic text-white mb-8 tracking-tight leading-tight drop-shadow-md">
+                    Video-tour de la casa
+                  </h3>
+                  <button 
+                    type="button"
+                    onClick={() => setIsPlayingTour(true)}
+                    className="flex items-center gap-4 px-10 py-4 md:py-5 bg-white/15 backdrop-blur-md border border-white rounded-full text-white text-xs tracking-[0.3em] font-bold hover:bg-white/25 hover:scale-105 transition-all duration-500 group uppercase shadow-lg cursor-pointer"
+                  >
+                    <Play size={20} className="fill-white group-hover:scale-110 transition-transform" />
+                    VER TOUR
+                  </button>
+                </motion.div>
+              </div>
+            </div>
+          )}
+
+          {isPlayingTour && (
+            <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
+              <a
+                href={MATTERPORT_TOUR_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-4 py-2 bg-black/60 hover:bg-black/90 text-white text-[11px] tracking-widest uppercase font-semibold rounded-full backdrop-blur-md border border-white/20 transition-all shadow-lg"
               >
-                <Play size={20} className="fill-white group-hover:scale-110 transition-transform" />
-                REPRODUCIR VÍDEO
+                <Maximize2 size={13} />
+                <span>Pantalla completa</span>
+              </a>
+              <button
+                type="button"
+                onClick={() => setIsPlayingTour(false)}
+                className="flex items-center gap-1.5 px-4 py-2 bg-black/60 hover:bg-black/90 text-white text-[11px] tracking-widest uppercase font-semibold rounded-full backdrop-blur-md border border-white/20 transition-all shadow-lg cursor-pointer"
+              >
+                <X size={14} />
+                <span>Cerrar</span>
               </button>
-            </motion.div>
-          </div>
+            </div>
+          )}
         </section>
 
         {/* Contact Section */}
